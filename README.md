@@ -9,7 +9,7 @@
 Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
-remote test
+
 # LAB 05 
 ## Mise en service d'un axe électrique avec une vis à bille.
 
