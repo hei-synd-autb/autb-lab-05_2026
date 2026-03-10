@@ -9,6 +9,7 @@
 Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
+> Version 2026, V1.0 
 
 # LAB 05 (Fortsetzung)
 ## Inbetriebnahme einer elektrischen Achse mit Kugelumlaufspindel.
@@ -152,11 +153,14 @@ Wir kennen die Eigenschaften des Kugelgewindetriebs.
 
 # Fahren Sie den Motor im manuellen Modus
 
+Ziel: Mit dem Tool „Easy Startup Mode“ eine Hin- und Herbewegung der Achse ausführen.
+Vorgehensweise: Nach dem Öffnen des Tools „Easy Startup Mode“ die folgenden Parameter anwenden:
+
 <div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupMode.png"
          alt="Image lost: EasyStartupMode.png">
-    <figcaption>You should be able to move your motor with that</figcaption>
+    <figcaption>You should be able to move your motor</figcaption>
 </figure>
 
 <figure>
@@ -165,15 +169,10 @@ Wir kennen die Eigenschaften des Kugelgewindetriebs.
     <figcaption>Only for info, click OK</figcaption>
 </figure>
 
-<figure>
-    <img src="./img/EasyStartupModeFirstMotionPosition.png"
-         alt="Image lost: EasyStartupModeFirstMotionPosition.png">
-    <figcaption>Start your first motion in Drive Controlled positionning</figcaption>
-</figure>
-</div>
+
 
 # Trace data
-Zeichnen Sie eine klassische Kurve für Position, Geschwindigkeit, Beschleunigung oder Drehmoment und Spurfehler.
+Zeichnen Sie die Kurve der Position, Geschwindigkeit, Kraft und Nachlauffehler in Abhängigkeit von der Zeit auf.
 
 <div style="text-align: center;">
 <figure>
@@ -205,9 +204,9 @@ Zeichnen Sie eine klassische Kurve für Position, Geschwindigkeit, Beschleunigun
 
 # Statische Reibung.
 - Messen Sie die Kraft, die zur Überwindung der Haftreibung erforderlich ist.
- Verwenden Sie dazu den Modus **Drehmoment-/Kraftsteuerung** und erhöhen Sie **nach und nach** den Prozentsatz der Kraftsteuerung.
+Verwenden Sie dazu den Modus **Torque/Force Control** und erhöhen Sie **schrittweise** den Kraftsollwert von 250 [N] aus.
 
-Wie viel Kraft ist ungefähr nötig, um die dynamische Reibung zu überwinden?
+Wie groß ist ungefähr die Kraft, die erforderlich ist, um die Haftreibung zu überwinden?
  Wie viel Prozent des Motordrehmoments wird für diesen Vorgang verwendet?
 
 > Der Befehl am Eingang des Strom-/Drehmoment-/Kraftreglers entspricht dem Ausgang des hier deaktivierten Geschwindigkeitsreglers.
@@ -255,17 +254,9 @@ $$\ S-0-0100 = 1000 * Motorträgheit = 1000 * P-0-0510 $$
 
 > Also start mit ``S-0-0100`` = **0,16**
 
-Erhöhen Sie die Verstärkung **allmählich**, bis das System zu vibrieren beginnt.
+Erhöhen Sie die Verstärkung **schrittweise**, bis das System zu vibrieren beginnt (mit dem Ohr hörbar). 
 
-Grundsätzlich ist die Vibration hörbar, ansonsten sehen Sie sich das Signal ``S-0-0100`` auf dem Oszilloskop an.
 
-<div style="text-align: center;">
-<figure>
-    <img src="./img/VelocityControllerVibrationExample.png"
-         alt="Image lost: VelocityControllerVibrationExample">
-    <figcaption>Velocity controller vibration</figcaption>
-</figure>
-</div>
 
 - Verringern Sie die Verstärkung, bis die Vibration aufhört. Das ist der entscheidende Gewinn.
 - Teilen Sie den kritischen Gewinn durch 2.
@@ -355,11 +346,10 @@ Versuchen Sie es mit Feed-Forward und vergleichen Sie
 
 # Dynamische Reibung
 - Messen Sie die erforderliche Kraft bei niedriger konstanter Geschwindigkeit
-- Verwenden Sie den Modus **Antriebsgesteuerte Positionierung**, aber erhöhen Sie bei +- 50 mm die Messzeit auf der Spur, um diese Messung durchzuführen.
+- Verwenden Sie den Modus **Velocity control**, aber erhöhen Sie bei +- 50 mm die Messzeit auf der Spur, um diese Messung durchzuführen.
 - Messungen mit 600 mm/min durchführen
-- Dann 6000 mm/min (also 100 mm/s)
+- Dann 6000 mm/min
 
-> Es wäre besser, den Geschwindigkeitsmodus zu verwenden, aber dieser hat derzeit einen **Fehler** und bewegt sich auf einigen Maschinen nicht hin und her.
 
 Klicken Sie mit der rechten Maustaste, um die Daten anzuzeigen:
 

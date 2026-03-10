@@ -9,6 +9,7 @@
 Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
+> Version 2026, V1.0 
 
 # LAB 05 (suite)
 Mise en service d'un axe électrique avec une vis à bille.
@@ -177,15 +178,15 @@ On connait les caractéristiques de la vis à bille.
 
 # Piloter le moteur en mode manuel
 
-Attention: **ne pas utiliser le mode Velocity Control**. Pour les essais on est en mode Position. 
+Objectif : effectuer un mouvement aller-retour de l'axe à l'aide de l'outil "Easy startup mode".
+Procédure : Après avoir ouvert l'outil "Easy startup mode", appliquer les paramètres comme suit :
 
-> On peut essayer avec précaution le mode Torque Force pour estimer la force de nécessaire pour vaincre les frottements de l'axe X. A partir de 250 [N] environ.
 
 <div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupMode.png"
          alt="Image lost: EasyStartupMode.png">
-    <figcaption>You should be able to move your motor with that</figcaption>
+    <figcaption>You should be able to move your motor</figcaption>
 </figure>
 
 <figure>
@@ -194,15 +195,10 @@ Attention: **ne pas utiliser le mode Velocity Control**. Pour les essais on est 
     <figcaption>Only for info, click OK</figcaption>
 </figure>
 
-<figure>
-    <img src="./img/EasyStartupModeFirstMotionPosition.png"
-         alt="Image lost: EasyStartupModeFirstMotionPosition.png">
-    <figcaption>Start your first motion in Drive Controlled positionning</figcaption>
-</figure>
-</div>
+
 
 # Trace data
-Tracer une courbe classique Position, vitesse, accélération ou torque et erreur de poursuite.
+Tracer la courbe de la position, vitesse, force et erreur de poursuite en fonction du temps.
 
 <div style="text-align: center;">
 <figure>
@@ -234,9 +230,9 @@ Tracer une courbe classique Position, vitesse, accélération ou torque et erreu
 
 # Frottement statique.
 -   Mesurer la force nécessaire pour vaincre le frottement statique.
-    Pour ceci, utiliser le mode **Torque/Force Control** et augmenter **petit à petit** les % de la commande de force.
+    Pour ceci, utiliser le mode **Torque/Force Control** et augmenter **petit à petit** la consigne de force à partir de 250 [N].
 
-	Quel est approximativement la force nécessaire pour vaincre le frottement dynamique ?
+	Quel est approximativement la force nécessaire pour vaincre le frottement statique ?
     Quel pourcentage du couple du moteur est utilisé pour cette opération ?
 
 > La commande à l'entrée du régulateur de courant/couple/force, correspond à la sortie du régulateur de vitesse qui est ici désactivé.
@@ -284,17 +280,9 @@ $$\ S-0-0100 = 1000 * l’inertie du moteur = 1000 * P-0-0510 $$
 
 > Donc démarrer avec ``S-0-0100`` = **0.16**
 
-Augmenter **progressivement** le gain jusqu'à ce que le système commence à vibrer. 
+Augmenter **progressivement** le gain jusqu'à ce que le système commence à vibrer (audible à l'oreille). 
 
-En principe, la vibration est audible, sinon, visualiser le signal ``S-0-0100`` sur l’oscilloscope.
 
-<div style="text-align: center;">
-<figure>
-    <img src="./img/VelocityControllerVibrationExample.png"
-         alt="Image lost: VelocityControllerVibrationExample">
-    <figcaption>Velocity controller vibration</figcaption>
-</figure>
-</div>
 
 -   Diminuer le gain jusqu'à ce que la vibration cesse. C’est le gain critique.
 -   Diviser le gain critique par 2.
@@ -303,6 +291,23 @@ En principe, la vibration est audible, sinon, visualiser le signal ``S-0-0100`` 
 -   Gain de départ : S-0-0100 = 1000 * P-0-0510 = 0.01
 -   L’oscillation apparaît à 0.09 et disparait à 0.065. Le gain critique est de 0.065
 -   S-0-0100 estimé à 0.065 / 2 = 0.0325
+
+
+### Visualisation avec l’oscilloscope   
+Effectuer un mouvement de va-et-vient en régulation de vitesse avec les paramètres suivants :
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/VelocityControl.png"
+         alt="Image lost: VelocityControl.png">
+    <figcaption>Velocity control</figcaption>
+</figure>
+</div>
+
+Tracer la courbe de la vitesse mesurée en fonction du temps.
+
+Est-ce que la valeur de la consigne de vitesse (Reversing velocity) est atteinte ?
+Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en régime continu ?
 
 ### Temps d’intégration S-0-0101
 -   Diminuer progressivement le temps d’intégration ``S-0-0101`` (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
@@ -315,20 +320,22 @@ L’oscillation apparaît à 0.6 et disparait à 0.7. La valeur critique est de 
 ``S-0-0101`` estimé à 0.7 * 2 = 1.4
 
 ### Visualisation avec l’oscilloscope
-Ici, affichage du couple en rouge et de la vitesse en bleu.
+Effectuer un mouvement de va-et-vient en régulation de vitesse avec les paramètres suivants :
 
 <div style="text-align: center;">
 <figure>
-    <img src="./img/VelocityControllerExample.png"
-         alt="Image lost: VelocityControllerExample">
-    <figcaption>Velocity controller example on the scope </figcaption>
+    <img src="./img/VelocityControl.png"
+         alt="Image lost: VelocityControl.png">
+    <figcaption>Velocity control</figcaption>
 </figure>
 </div>
 
--   Les échelles sont ajustées manuellement pour visualiser sur le même tableau les deux valeurs pour une vitesse de 600 rpm.
--   On voit que la vitesse oscille de moins de 2 rpm < 0.5%
--   Le couple oscille à un incrément de la résolution
--   On obtient donc pour un moteur simple, un régulateur de vitesse stable.
+Tracer la courbe de la vitesse mesurée en fonction du temps.
+
+Est-ce que la valeur de la consigne de vitesse (Reversing velocity) est atteinte ?
+
+Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en régime continu ?
+
 
 
 ## Visualise your data en mode **Position Control**,
@@ -384,11 +391,11 @@ Essayer avec Feed-Forward et comparer
 
 # Frottement dynamique
 -   Mesurer la force nécessaire a faible vitesse constante
--   Utiliser le mode **Drive-controlled positioning**, mais sur $\ +- 50 [mm]$ pour faire cette mesure, augmenter le temps de mesure sur la trace.
--   Faire des mesures à $\ 10 [mm/s]$
--   Puis $\ 100 [mm/s]$ 
+-   Utiliser le mode **Velocity control**, mais sur $\ +- 50 [mm]$ pour faire cette mesure, augmenter le temps de mesure sur la trace.
+-   Faire des mesures à $\ 600 [mm/min]$
+-   Puis $\ 6000 [mm/min]$ 
 
-> Il serait préférable d'utiliser le mode vitesse, mais celui-ci a actuellement un **bug** et ne fait pas de mouvement aller-retour sur certaines machines.
+
 
     Comparer avec les spécifications du moteur.
 
