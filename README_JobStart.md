@@ -56,7 +56,7 @@ Ce logiciel est conçu pour:
 
 # Connect
 
-Se connecter au drive avec USB-C, utiliser l'axe X. 
+Se connecter au drive avec USB-C, utiliser **l'axe X**. 
 Possible en utilisant son propre PC pour garder le PC labo libre pour d'autres tâches.
 
 <div style="text-align: center;">
@@ -69,12 +69,12 @@ Possible en utilisant son propre PC pour garder le PC labo libre pour d'autres t
 
 > Il est possible de se connecter de différentes manières.
 
-# Backup
-Sauvegarder les paramètres actuels pour pouvoir les restaurer si nécessaire.
+# IMPORTANT : Sauvegarde des paramètres
+Sauvegarder les paramètres actuels pour pouvoir les restaurer à la fin du laboratoire.
 
-Avant de sauvegarder les paramètres, il est préférable de passer en mode PM, Parameter Mode. Pour cela, le moteur ne doit pas être sous tension.
+Avant de sauvegarder les paramètres, il est préférable de passer en mode PM (Parameter Mode). Pour cela, le moteur ne doit pas être sous tension.
 
-SelectParameterMode
+Select Parameter Mode
 
 <div style="text-align: center;">
 <figure>
@@ -93,10 +93,10 @@ SelectParameterMode
 Les paramètres sont numérotés selon le système [Sercos](https://www.sercos.org).
 Une multitude de paramètres sont accessibles en Realtime ou Non Realtime, en lecture ou en écriture. Certains paramètres ne peuvent être modifiés que quand le moteur est hors couple, voir même quand le drive est en mode Parameter.
 
-- **Backup parameter**s pour les paramètres de configuration.
+- **Backup parameters** pour les paramètres de configuration.
 - **All parameters**, archive absolument tous les paramètres. Ceci est utile pour faire un diagnostic, ou dans le cadre d'un cours pour présenter un axe uniquement sous forme de paramètres.
 
-Après avec archivé les paramètres, restaurer le mode OM.
+Après avec archivé les paramètres, commuter en mode OM (Operating mode).
 
 <div style="text-align: center;">
 <figure>

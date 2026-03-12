@@ -31,7 +31,7 @@ Diese Software wurde entwickelt, um:
 
 # Connect
 
-Schließen Sie das Laufwerk über USB-C an und verwenden Sie die X-Achse. Möglich ist dies, indem Sie Ihren eigenen PC verwenden, um den Labor-PC für andere Aufgaben freizuhalten.
+Schließen Sie das Laufwerk über USB-C an und verwenden Sie die **X-Achse**. Möglich ist dies, indem Sie Ihren eigenen PC verwenden, um den Labor-PC für andere Aufgaben freizuhalten.
  
  <div style="text-align: center;">
 <figure>
@@ -43,12 +43,12 @@ Schließen Sie das Laufwerk über USB-C an und verwenden Sie die X-Achse. Mögli
 
 > Es ist möglich, auf verschiedene Arten eine Verbindung herzustellen.
 
-# Backup
-Sichern Sie die aktuellen Einstellungen, damit Sie sie bei Bedarf wiederherstellen können.
+# WICHTIG: Speichern der Parameter
+Speichern Sie die aktuellen Parameter, damit Sie sie am Ende des Labors wiederherstellen können.
 
-Vor dem Speichern der Parameter wechseln Sie am besten in den PM-Modus, den Parametermodus. Dazu darf der Motor spannungsfrei sein.
+Bevor Sie die Parameter speichern, sollten Sie in den PM-Modus (Parameter Mode) wechseln. Dazu darf der Motor nicht eingeschaltet sein.
 
-SelectParameterMode
+Select Parameter Mode
 
 <div style="text-align: center;">
 <figure>
