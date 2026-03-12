@@ -382,6 +382,7 @@ Wissend, dass:
 
 ## Hilfsfragen
 - Wie hoch ist die Spannung am DC-Bus?
+- Wie lang ist die Zykluszeit der EtherCAT-Kommunikation zwischen dem Antrieb und der SPS ?
 - Welche Register sendet die SPS an den Antrieb?
 - Welches Register ermöglicht es der SPS, die Position des Motors zu erkennen?
 - Warum ist es in unserem Fall unnötig, den Encoder zu konfigurieren?
@@ -390,6 +391,38 @@ Wissend, dass:
 - Wozu dient die Bremse an der Z-Achse?
 
 
-## Verlassen Sie den Raum nicht, bis Sie die Einstellungen wiederhergestellt haben!
 
-## Nach dem Laden der Parameter den Antrieb wieder in den **OM**-Modus, Operating Mode, versetzen!
+<br><br>
+
+# WICHTIG : 
+
+# Am Ende des Labors durchzuführende Schritte
+
+## 1) Stellen Sie die zu Beginn des Labors gespeicherten Parameter des Laufwerks wieder her (*.par-Datei).
+
+
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/LoadParameters.png"
+         alt="Image lost: LoadParameters">
+    <figcaption>Load parameters</figcaption>
+</figure>
+</div>
+
+
+
+## 2) Schalten Sie den Antrieb in den Modus **OM** (Operating Mode).
+
+## 3) Beenden Sie den Modus „Easy Startup Mode”.
+
+
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/EasyStartupMode_OperatingMode.png"
+         alt="Image lost: EasyStartupMode_OperatingMode">
+    <figcaption>Easy startup mode and Operating mode</figcaption>
+</figure>
+</div>
+

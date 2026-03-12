@@ -429,7 +429,8 @@ Sachant que:
 
 
 ## Questions auxiliaires
--   Quels est la tension sur le bus DC ?
+-   Quelle est la tension sur le bus DC ?
+-   Quel est le temps de cycle de la communication EtherCAT entre le Drive et le PLC ?
 -   Quels sont les registres que le PLC envoie au drive?
 -   Quel registre permet au PLC de connaitre la position du moteur ?
 -   Pourquoi est-il, dans notre cas, inutile de configurer le codeur ?
@@ -438,9 +439,37 @@ Sachant que:
 -   A quoi sert le frein sur l'axe Z ?
 
 
-## Ne pas quitter la salle avant d'avoir restauré les paramètres !
+<br><br>
 
-Après avoir chargé les paramètres: 
-## remettre le drive en mode **OM**, Operating Mode!
+# IMPORTANT : 
 
-## Ne pas laisser le drive en Startup Mode, Merci !
+# Procédure à effectuer à la fin du laboratoire
+
+## 1) Restaurer les paramètres du Drive que vous avez sauvegardés au début du laboratoire (fichier *.par).
+
+
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/LoadParameters.png"
+         alt="Image lost: LoadParameters">
+    <figcaption>Load parameters</figcaption>
+</figure>
+</div>
+
+
+
+## 2) Commuter le drive en mode **OM** (Operating Mode)
+
+## 3) Arrêter le mode "Easy startup mode"
+
+
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/EasyStartupMode_OperatingMode.png"
+         alt="Image lost: EasyStartupMode_OperatingMode">
+    <figcaption>Easy startup mode and Operating mode</figcaption>
+</figure>
+</div>
+
