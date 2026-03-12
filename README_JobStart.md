@@ -443,9 +443,9 @@ Sachant que:
 
 # IMPORTANT : 
 
-# Procédure à effectuer à la fin du laboratoire
+## Procédure à effectuer à la fin du laboratoire
 
-## 1) Restaurer les paramètres du Drive que vous avez sauvegardés au début du laboratoire (fichier *.par).
+1) Restaurer les paramètres du Drive que vous avez sauvegardés au début du laboratoire (fichier *.par).
 
 
 
@@ -459,9 +459,9 @@ Sachant que:
 
 
 
-## 2) Commuter le drive en mode **OM** (Operating Mode)
+2) Commuter le drive en mode **OM** (Operating Mode)
 
-## 3) Arrêter le mode "Easy startup mode"
+3) Arrêter le mode "Easy startup mode"
 
 
 

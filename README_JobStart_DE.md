@@ -396,9 +396,9 @@ Wissend, dass:
 
 # WICHTIG : 
 
-# Am Ende des Labors durchzuführende Schritte
+## Am Ende des Labors durchzuführende Schritte
 
-## 1) Stellen Sie die zu Beginn des Labors gespeicherten Parameter des Laufwerks wieder her (*.par-Datei).
+1) Stellen Sie die zu Beginn des Labors gespeicherten Parameter des Laufwerks wieder her (*.par-Datei).
 
 
 
@@ -412,9 +412,9 @@ Wissend, dass:
 
 
 
-## 2) Schalten Sie den Antrieb in den Modus **OM** (Operating Mode).
+2) Schalten Sie den Antrieb in den Modus **OM** (Operating Mode).
 
-## 3) Beenden Sie den Modus „Easy Startup Mode”.
+3) Beenden Sie den Modus „Easy Startup Mode”.
 
 
 
