@@ -188,12 +188,18 @@ Procédure : Après avoir ouvert l'outil "Easy startup mode", appliquer les para
          alt="Image lost: EasyStartupMode.png">
     <figcaption>You should be able to move your motor</figcaption>
 </figure>
+</div>
 
+
+
+<div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupModeDangerous.png"
          alt="Image lost: EasyStartupModeDangerous.png">
     <figcaption>Only for info, click OK</figcaption>
 </figure>
+</div>
+
 
 
 
@@ -208,7 +214,7 @@ Tracer la courbe de la position, vitesse, force et erreur de poursuite en foncti
 </figure>
 </div>
 
-## Paramètres à visualiser et commenter:
+## Paramètres à visualiser et à commenter:
 ``S-0-0084``	Force
 ``S-0-0051``	Position
 ``S-0-0040``	Vitesse
@@ -267,7 +273,7 @@ Tracer la courbe de la position, vitesse, force et erreur de poursuite en foncti
 ### Réglage empirique
 Basé sur la méthode Ziegler et Nichols
 
-> Idéalement, faire tourner le moteur en mode vitesse à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nous travaillons à vitesse nulle**.
+> Idéalement, faire tourner le moteur en **mode vitesse** à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nous travaillons à vitesse nulle**.
 
 > Attention, feed-forward ; ``P-0-1126.0.0`` à 0 !
 
@@ -338,20 +344,20 @@ Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en 
 
 
 
-## Visualise your data en mode **Position Control**,
+## Mode **Position Control**,
  
-Tracer les courbes sur 4 secondes pour :
+Commuter sur le mode **Position Control** et afficher les informations suivantes sur l'oscilloscope pendant 4 secondes :
 -   ``S-0-0084``	Force
 -   ``S-0-0051``	Position
 -   ``S-0-0040``	Vitesse
 -   ``S-0-0189``	Erreur de poursuite
 
-Start et automatic scaling quand le signal est disponible
+
  
-Commenter le graph
+Commenter vos résultats.
 
 ## Comparer avec l'auto tuning
-        Mémorisez vos valeurs de S-0-0100 et ``S-0-0101`` et les comparer avec le tuning automatique.
+        Mémorisez vos valeurs de ``S-0-0100`` et ``S-0-0101`` et les comparer avec le tuning automatique.
 
 <div style="text-align: center;">
 <figure>
@@ -411,7 +417,7 @@ Utiliser click droit pour visualiser les données :
 
 # En finalité
 
-> Vous pouvez utiliser les programmes PLC et Node-RED fournis en annexe pour vérfier le fonctionnemet en état **Automatic** et **Execute**.
+> Vous pouvez utiliser les programmes PLC et Node-RED fournis en annexe pour vérifier le fonctionnemet en état **Automatic** et **Execute**.
 
 ## Préparer un mouvement avec
 $\ +/- 50 [mm]$ avec une vitesse de $\ 0.04 [m/s]$ et une accélération de $\ 1 [m/s^2] $.

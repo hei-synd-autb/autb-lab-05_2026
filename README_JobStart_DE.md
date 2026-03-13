@@ -162,13 +162,15 @@ Vorgehensweise: Nach dem Öffnen des Tools „Easy Startup Mode“ die folgenden
          alt="Image lost: EasyStartupMode.png">
     <figcaption>You should be able to move your motor</figcaption>
 </figure>
+</div>
 
+<div style="text-align: center;">
 <figure>
     <img src="./img/EasyStartupModeDangerous.png"
          alt="Image lost: EasyStartupModeDangerous.png">
     <figcaption>Only for info, click OK</figcaption>
 </figure>
-
+</div>
 
 
 # Trace data
@@ -277,33 +279,34 @@ Die Schwingung erscheint bei 0,6 und verschwindet bei 0,7. Der kritische Wert li
 ``S-0-0101`` geschätzt auf 0,7 * 2 = 1,4
 
 ### Visualisierung mit dem Oszilloskop
-Dabei wird das Drehmoment in Rot und die Geschwindigkeit in Blau angezeigt.
+Führen Sie eine Hin- und Herbewegung mit Geschwindigkeitsregelung und den folgenden Parametern durch :
 
 <div style="text-align: center;">
 <figure>
-    <img src="./img/VelocityControllerExample.png"
-         alt="Image lost: VelocityControllerExample">
-    <figcaption>Velocity controller example on the scope </figcaption>
+    <img src="./img/VelocityControl.png"
+         alt="Image lost: VelocityControl.png">
+    <figcaption>Velocity control</figcaption>
 </figure>
 </div>
 
-- Die Skalen werden manuell angepasst, um in derselben Tabelle die beiden Werte für eine Drehzahl von 600 U/min anzuzeigen.
-- Wir sehen, dass die Drehzahl um weniger als 2 U/min < 0,5 % schwankt.
-- Das Drehmoment schwankt mit einem Inkrement der Auflösung
-- Wir erhalten somit einen stabilen Drehzahlregler für einen einfachen Motor.
+Zeichnen Sie die Kurve der gemessenen Geschwindigkeit als Funktion der Zeit auf.
+
+Wird der Sollwert für die Umkehrgeschwindigkeit erreicht?
+
+Wie groß ist die Schwankung der Geschwindigkeit in [mm/min] und in [%] im Dauerbetrieb ?
 
 
 ## Visualise your data en mode **Velocity Control**,
  
-Zeichnen Sie die Kurven über 4 Sekunden für:
+Die folgenden Informationen 4 Sekunden lang auf dem Oszilloskop anzeigen 
 - ``S-0-0084`` Stärke
 - ``S-0-0051`` Position.
 - ``S-0-0040`` Geschwindigkeit
 - ``S-0-0189`` Tracking-Fehler
 
-Start und automatische Skalierung bei Signalverfügbarkeit
 
-> Kommentieren Sie die Grafik
+
+> Kommentieren Sie Ihre Ergebnisse
 
 ## Vergleichen Sie mit Autotuning
 Merken Sie sich Ihre Werte von ``S-0-0100`` und ``S-0-0101`` und vergleichen Sie diese mit der automatischen Abstimmung.
@@ -395,7 +398,6 @@ Wissend, dass:
 <br><br>
 
 # WICHTIG : 
-
 ## Am Ende des Labors durchzuführende Schritte
 
 1) Stellen Sie die zu Beginn des Labors gespeicherten Parameter des Laufwerks wieder her (*.par-Datei).
