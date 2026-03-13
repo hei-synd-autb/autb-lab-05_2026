@@ -261,7 +261,7 @@ Le paramètre **acceleration feedforward** du régulateur de vitesse n'est utile
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
          alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">
-    <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
+    <figcaption>Proportional gain and integration time of the velocity controller</figcaption>
 </figure>
 </div>
 

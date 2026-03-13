@@ -9,6 +9,7 @@
 Cours AutB
 
 Author: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch)
+> Version 2026, V1.0 
 
 # LAB 05 Inbetriebnahme einer elektrischen Achse mit Kugelumlaufspindel.
 
@@ -170,6 +171,8 @@ Beachten Sie weiter unten, dass die Drehmomentgrenze eine direkte Beziehung zwis
 
 ## Drive Control
 
+## Stromregler
+
 Die Parameter des Stromreglers werden vom Antrieb anhand der elektrischen Parameter des Motors geschätzt. Mit sehr seltenen Ausnahmen werden wir die Parameter dieses Reglers niemals ändern.
 
 <div style="text-align: center;">
@@ -179,6 +182,65 @@ Die Parameter des Stromreglers werden vom Antrieb anhand der elektrischen Parame
     <figcaption>Motor operation and configuration</figcaption>
 </figure>
 </div>
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/New_MotorFor_X_Axis.png"
+         alt="Image lost: New_MotorFor_X_Axis">
+    <figcaption>X Axis motor data</figcaption>
+</figure>
+</div>
+
+> Bei einem Synchronmotor kann der Stromregler als Regler für die Beschleunigung – oder Winkelbeschleunigung – betrachtet werden, abgesehen von einer Konstante.
+
+Es gilt also: 
+Winkelbeschleunigung = Strom * Motorkonstante / Trägheitsmoment.
+
+
+$$
+\text{Kraft} = \text{Masse} \times \text{Beschleunigung}
+$$
+
+
+
+$$
+\text{Drehmoment} = \text{Trägheitsmoment} \times \text{Winkelbeschleunigung}
+$$
+
+
+$$
+\text{Winkelbeschleunigung} = \frac{\text{Drehmoment}}{\text{Trägheitsmoment}}
+$$
+
+Das Trägheitsmoment des Motors ist eine Konstante, hier: Rotor-Trägheit in $\ [kgm^2]$.
+
+Konstante Drehkraft des Motors in $\ [Nm/A]$.
+
+Oder anders ausgedrückt: Das Drehmoment in Nm ergibt sich aus:
+
+$$
+\text{Drehmoment} = \text{Stromstärke}[A] \times \text{Motorkonstante} [Nm/A]
+$$
+
+Daraus ergibt sich:
+
+$$
+\text{Winkelbeschleunigung} = \frac{\text{Stromstärke} \times \text{Motorkonstante}}{\text{Trägheitsmoment (Konstante)}}
+$$
+
+Und schließlich:
+
+
+$$
+\text{Winkelbeschleunigung} = \text{Stromstärke} [A] \times \frac{ \text{Motorkonstante} [\frac{\text{Nm}}{\text{A}}] }{\text{Rotorträgheitsmoment}[{\text{kgm}}^2]}
+$$
+
+
+Man stellt fest, dass die Beschleunigung – abgesehen von einer konstanten Größe – direkt proportional zum Strom ist. Auch wenn dies nur eine Annäherung ist.
+
+
+
+### Schaltwinkel
 
 Diese Methode wird verwendet, um die Position des Encoders relativ zu den Magneten zu bestimmen, falls diese Informationen nicht vom Motorlieferanten kalibriert werden konnten. Im Prinzip unbrauchbar für einen Rotationsmotor, oft unerlässlich für den Einsatz eines Linearmotors mit *selbstgebauter* Mechanik.
 
@@ -190,6 +252,8 @@ Diese Methode wird verwendet, um die Position des Encoders relativ zu den Magnet
 </figure>
 </div>
 
+
+## Geschwindigkeitsregler
 Die Hauptaufgabe des Automatisierungsingenieurs besteht darin, die richtigen P- und I-Parameter des Tempomaten zu finden
 .
 Der Parameter **Acceleration Feedforward** des Geschwindigkeitsreglers ist nur sinnvoll, wenn die Achse im Geschwindigkeitsmodus gefahren wird. Wir verweisen auf die Erläuterung dieses Parameters für den Positionsregler.
@@ -198,9 +262,34 @@ Der Parameter **Acceleration Feedforward** des Geschwindigkeitsreglers ist nur s
 <figure>
     <img src="./img/BaseDriveControlAxisControlVelocityDependsOfMechanic.png"
          alt="Image lost: BaseDriveControlAxisControlVelocityDependsOfMechanic">
-    <figcaption>Propartional gain and integration time of the velocity controller</figcaption>
+    <figcaption>Proportional gain and integration time of the velocity controller</figcaption>
 </figure>
 </div>
+
+
+#### S-0-0100 die Verstärkung $\ Kp$ des Drehzahlreglers.
+Je größer die Verstärkung $\ Kp$ ist, desto stärker wird die Drehzahlabweichung verstärkt.
+
+#### S-0-0101 die Integrationszeit $\ Tn$ des Drehzahlreglers, 
+oder der Kehrwert von $\ Ki = \frac{1}{Tn}$
+
+Je kleiner $\ Tn$ ist, desto schneller integriert der Drehzahlregler die Drehzahlabweichung.
+
+
+Die Übertragungsfunktion lässt sich wie folgt ausdrücken:
+
+$$
+v(t) = K_p e(t) + K_i \int e(t) \, dt
+$$
+
+wobei:
+- \( e(t) \) der zeitabhängige Fehler ist,
+- \( K_p \) die Proportionalverstärkung ist,
+- \( K_i \) die Integralverstärkung ist.
+
+
+
+### Stellungsregler
 
 Wir arbeiten im Allgemeinen nur an der Verstärkung des Reglers, und diese bleibt in der Praxis oft bei **1**.
 
@@ -211,6 +300,10 @@ Wir arbeiten im Allgemeinen nur an der Verstärkung des Reglers, und diese bleib
     <figcaption>Settings of the position controller</figcaption>
 </figure>
 </div>
+
+
+
+
 
 ### Feed Forward
 Mit dem Parameter **Feed-Forward** können wir die Reaktionsfähigkeit des Systems anpassen. Ohne auf die Details der Übertragungsfunktion einzugehen, die ohnehin nicht im Programm der gesamten Klasse enthalten ist, können wir diesen Parameter intuitiv relativ einfach erklären.
