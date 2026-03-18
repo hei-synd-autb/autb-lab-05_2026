@@ -158,11 +158,11 @@ Vous pouvez modifier les limites soit dans cette liste de paramètres, attention
 Soit aller dans la fenêtre des limites mentionnée en introduction.
 
 ### Les limites à modifier
--   ``P-0-0109.0.0 ``   :   1766
--   ``S-0-0082.0.0``    :   1500
--   ``S-0-0083.0.0``    :   -1500
+-   ``P-0-0109.0.0 ``   :   1766 [N], Torque / Force limitation : Peak limit value
+-   ``S-0-0082.0.0``    :   1500 [N], Torque / Force limitation : Limit value positive
+-   ``S-0-0083.0.0``    :   -1500 [N], Torque / Force limitation : Limit value negative
 
-> Le système ne fait pas automatiquement une conversion Coule/Force au niveau des limites quand on change d'unité, c'est pourquoi ces limites doivent être adaptées si on change d'unité.
+> Le système ne fait pas automatiquement une conversion Couple/Force au niveau des limites quand on change d'unité, c'est pourquoi ces limites doivent être adaptées si on change d'unité.
 
 > Si ces limites sont trop faibles le système ne pourra pas travailler correctement, en particulier lors des phases d'accélération et de décélération.
 

@@ -91,7 +91,7 @@ Cette liste de paramètres est en général suffisante pour que le drive puisse 
 
 *Noter la valeur manquante : Rated Motor Speed 3320 rpm.*
 
-Le model de température ne pose en principe pas de problème pour un moteur rotatif intégré. Il devra être très finement configuré pour des moteurs linéaires dont la constante de temps thermique dépend d'une mécanique spécifique. 
+Le modèle de température ne pose en principe pas de problème pour un moteur rotatif intégré. Il devra être très finement configuré pour des moteurs linéaires dont la constante de temps thermique dépend d'une mécanique spécifique. 
 
 <div style="text-align: center;">
 <figure>

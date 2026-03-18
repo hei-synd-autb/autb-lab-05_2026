@@ -131,10 +131,10 @@ Sie können auch die mit den Dokumenten bereitgestellte Datei verwenden, siehe: 
 Sie können die Grenzwerte entweder in dieser Parameterliste ändern. Seien Sie vorsichtig, Sie müssen sich im **PM**-Modus befinden.
 Gehen Sie entweder zu dem in der Einleitung erwähnten Limitfenster.
 
-### Les limites à modifier
--   ``P-0-0109.0.0 ``   :   1766
--   ``S-0-0082.0.0``    :   1500
--   ``S-0-0083.0.0``    :   -1500
+### Die zu ändernden Grenzwerte
+-   ``P-0-0109.0.0 ``   :   1766 [N], Torque / Force limitation : Peak limit value
+-   ``S-0-0082.0.0``    :   1500 [N], Torque / Force limitation : Limit value positive
+-   ``S-0-0083.0.0``    :   -1500 [N], Torque / Force limitation : Limit value negative
 
 > Das System führt bei einem Einheitenwechsel keine automatische Kraft-/Stärkeumrechnung an den Grenzen durch, weshalb diese Grenzen bei einem Einheitenwechsel angepasst werden müssen.
 
