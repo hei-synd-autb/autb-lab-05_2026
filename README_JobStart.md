@@ -357,7 +357,7 @@ Commuter sur le mode **Position Control** et afficher les informations suivantes
 Commenter vos résultats.
 
 ## Comparer avec l'auto tuning
-        Mémorisez vos valeurs de ``S-0-0100`` et ``S-0-0101`` et les comparer avec le tuning automatique.
+Mémorisez vos valeurs de ``S-0-0100`` et ``S-0-0101`` et les comparer avec le tuning automatique.
 
 <div style="text-align: center;">
 <figure>
@@ -393,7 +393,30 @@ Afficher les résultats et commenter
 > Comparer Load Inertia : *your measure* avec celle du moteur ``P-0-0510``.
 Votre commentaire…
 
-Essayer avec Feed-Forward et comparer
+<br>
+Essayer avec Feed-Forward et comparer.
+
+## Influence du Jerk
+
+Effectuer plusieurs déplacements de l'axe avec différentes valeurs du jerk.
+Quels sont les effets négatifs d'un jerk élevé sur la mécanique du système ?
+
+
+
+<br>
+
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/DriveControlledPositioning.png"
+         alt="Image lost: DriveControlledPositioning">
+    <figcaption>Drive Controlled-Positioning</figcaption>
+</figure>
+</div>
+
+
+
+
 
 # Frottement dynamique
 -   Mesurer la force nécessaire a faible vitesse constante

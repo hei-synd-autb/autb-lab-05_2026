@@ -345,7 +345,28 @@ Ergebnisse ansehen und kommentieren
 > Vergleichen Sie die Lastträgheit: *Ihr Maß* mit dem des Motors „P-0-0510“.
 Dein Kommentar…
 
+<br>
+
 Versuchen Sie es mit Feed-Forward und vergleichen Sie
+
+
+## Einfluss des Jerk-Werts
+
+Führen Sie mehrere Achsenbewegungen mit unterschiedlichen Jerk-Werten durch.
+Welche negativen Auswirkungen hat ein hoher Jerk-Wert auf die Systemdynamik ?
+
+
+<br>
+
+<div style="text-align: center;">
+<figure>
+    <img src="./img/DriveControlledPositioning.png"
+         alt="Image lost: DriveControlledPositioning">
+    <figcaption>Drive Controlled-Positioning</figcaption>
+</figure>
+</div>
+
+
 
 # Dynamische Reibung
 - Messen Sie die erforderliche Kraft bei niedriger konstanter Geschwindigkeit
