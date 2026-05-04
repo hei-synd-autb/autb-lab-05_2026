@@ -276,7 +276,7 @@ Basé sur la méthode Ziegler et Nichols
 
 > Attention, feed-forward ; ``P-0-1126.0.0`` à 0 !
 
-### Gain S-0-0100
+### Gain proportionnel Kp (S-0-0100)
 > Conditions de départ :
 -   Régulateur de position ``S-0-0104`` = 1
 $$\ S-0-0100 = 1000 * l’inertie du moteur = 1000 * P-0-0510 $$
@@ -314,7 +314,7 @@ Tracer la courbe de la vitesse mesurée en fonction du temps.
 Est-ce que la valeur de la consigne de vitesse (Reversing velocity) est atteinte ?
 Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en régime continu ?
 
-### Constante de temps d’intégration Tn S-0-0101
+### Constante de temps d’intégration Tn (S-0-0101)
 -   Diminuer progressivement la constante de temps d’intégration Tn ``S-0-0101`` (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
 -   Augmenter la constante de temps d’intégration Tn  jusqu’à faire cesser l’oscillation. La valeur obtenue est le temps critique.
 -   Multiplier ensuite la valeur par 2 pour obtenir la valeur finale de ``S-0-0101``.
