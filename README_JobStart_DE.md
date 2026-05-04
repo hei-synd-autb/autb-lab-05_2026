@@ -113,9 +113,9 @@ Es ist zu beachten, dass ein Wechsel der Einheit unter keinen Umständen möglic
 </figure>
 </div>
 
-## Grenzen ändern
+## Die zu überprüfenden Grenzwerte
 Das System weiß nicht, wie Grenzwerte beim Ändern der Einheit von Drehmoment in Kraft korrekt umgerechnet werden.
-Sie müssen die Kraftgrenzen ändern, sonst können Sie die Achse nicht verwenden!
+Sie müssen die Grenzwerte überprüfen, sonst können Sie die Achse nicht verwenden!
 
 <div style="text-align: center;">
 <figure>
@@ -131,7 +131,7 @@ Sie können auch die mit den Dokumenten bereitgestellte Datei verwenden, siehe: 
 Sie können die Grenzwerte entweder in dieser Parameterliste ändern. Seien Sie vorsichtig, Sie müssen sich im **PM**-Modus befinden.
 Gehen Sie entweder zu dem in der Einleitung erwähnten Limitfenster.
 
-### Die zu ändernden Grenzwerte
+### Zu überprüfende Grenzwerte
 -   ``P-0-0109.0.0 ``   :   1766 [N], Torque / Force limitation : Peak limit value
 -   ``S-0-0082.0.0``    :   1500 [N], Torque / Force limitation : Limit value positive
 -   ``S-0-0083.0.0``    :   -1500 [N], Torque / Force limitation : Limit value negative
@@ -225,11 +225,9 @@ Wie groß ist ungefähr die Kraft, die erforderlich ist, um die Haftreibung zu �
 </figure>
 </div>
 
-1. Grenzwerte: Ermöglicht Ihnen, die Motorgeschwindigkeit zu begrenzen
-2. V-Loop-Filter: 2 oder 4 konfigurierbare Filter + 1 Tiefpassfilter
-3. S-0-0100: P-Anteil, proportional zum Tempomat.
-4. S-0-0101: Komponente I, Tempomatintegral.
-5. S-0-0163: Gewichtskompensation, für Vertikalachsen
+1.    S-0-0100: Proportionalverstärkung Kp.
+2.    S-0-0101: Integrationskonstante Tn.
+3.    S-0-0163: Gewichtsausgleich für vertikale Achsen.
 
 <div style="text-align: center;">
 <figure>
@@ -268,9 +266,9 @@ Erhöhen Sie die Verstärkung **schrittweise**, bis das System zu vibrieren begi
 - Die Schwingung erscheint bei 0,09 und verschwindet bei 0,065. Der kritische Gewinn beträgt 0,065
 - S-0-0100 geschätzt auf 0,065 / 2 = 0,0325
 
-### Integrationszeit S-0-0101
--   Verringern Sie die Integrationszeit S-0-0101 schrittweise (beginnend bei ca. 100 ms), bis Sie den Oszillationspunkt erreichen.
--   Erhöhen Sie die Integrationszeit, bis die Schwingung aufhört. Der erhaltene Wert ist die kritische Zeit.
+### Integrationszeitkonstante Tn S-0-0101
+-   Verringern Sie die Integrationszeitkonstante Tn S-0-0101 schrittweise (beginnend bei ca. 100 ms), bis Sie den Oszillationspunkt erreichen.
+-   Erhöhen Sie die Integrationszeitkonstante Tn, bis die Schwingung aufhört. Der erhaltene Wert ist die kritische Zeit.
 -   Anschließend multiplizieren Sie den Wert mit 2, um den Endwert von S-0-0101 zu erhalten.
 
 #### Beispiel :
@@ -437,7 +435,7 @@ Wissend, dass:
 
 2) Schalten Sie den Antrieb in den Modus **OM** (Operating Mode).
 
-3) Beenden Sie den Modus „Easy Startup Mode”.
+3) **Beenden Sie den Modus „Easy Startup Mode”**.
 
 
 

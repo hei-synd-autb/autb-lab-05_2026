@@ -139,9 +139,9 @@ Il faut noter qu'un changement d'unité ne peut pas se faire sous n'importe quel
 </figure>
 </div>
 
-## Modification des limites
+## Vérification des limites
 Le système ne sait pas convertir correctement les limites lors du changement d'unités de couple vers force.
-Il faut modifier les limites de force, sous peine de ne pas réussir à utiliser l'axe !
+Il faut vérifier les limites de force, sous peine de ne pas réussir à utiliser l'axe !
 
 <div style="text-align: center;">
 <figure>
@@ -157,7 +157,7 @@ Vous pouvez aussi utiliser le fichier fournit avec les documents, voir: ``..\ctr
 Vous pouvez modifier les limites soit dans cette liste de paramètres, attention, il faut être en mode **PM**.
 Soit aller dans la fenêtre des limites mentionnée en introduction.
 
-### Les limites à modifier
+### Les limites à vérifier
 -   ``P-0-0109.0.0 ``   :   1766 [N], Torque / Force limitation : Peak limit value
 -   ``S-0-0082.0.0``    :   1500 [N], Torque / Force limitation : Limit value positive
 -   ``S-0-0083.0.0``    :   -1500 [N], Torque / Force limitation : Limit value negative
@@ -255,11 +255,10 @@ Tracer la courbe de la position, vitesse, force et erreur de poursuite en foncti
 </figure>
 </div>
 
-1.	Limit Values : Permet de limiter la vitesse du moteur
-2.	V-loop Filter : 2 ou 4 filtres paramétrables + 1 filtre passe-bas
-3.	S-0-0100 : Composante P, proportionnelle du régulateur de vitesse.
-4.	S-0-0101 : Composante I, intégrale du régulateur de vitesse.
-5.	S-0-0163 : Compensation de poids, pour les axes verticaux
+
+1.	S-0-0100 : Gain proportionel Kp.
+2.	S-0-0101 : Constante d'intégration Tn.
+3.	S-0-0163 : Compensation de poids, pour les axes verticaux.
 
 <div style="text-align: center;">
 <figure>
@@ -286,15 +285,15 @@ $$\ S-0-0100 = 1000 * l’inertie du moteur = 1000 * P-0-0510 $$
 
 > Donc démarrer avec ``S-0-0100`` = **0.16**
 
-Augmenter **progressivement** le gain jusqu'à ce que le système commence à vibrer (audible à l'oreille). 
+Augmenter **progressivement** le gain proportionnel Kp jusqu'à ce que le système commence à vibrer (audible à l'oreille). 
 
 
 
--   Diminuer le gain jusqu'à ce que la vibration cesse. C’est le gain critique.
--   Diviser le gain critique par 2.
+-   Diminuer le gain proportionnel Kp jusqu'à ce que la vibration cesse. C’est le gain critique.
+-   Diviser le gain proportionnel Kp critique par 2.
 
 #### Exemple :
--   Gain de départ : S-0-0100 = 1000 * P-0-0510 = 0.01
+-   Gain proportionnel Kp de départ : S-0-0100 = 1000 * P-0-0510 = 0.01
 -   L’oscillation apparaît à 0.09 et disparait à 0.065. Le gain critique est de 0.065
 -   S-0-0100 estimé à 0.065 / 2 = 0.0325
 
@@ -315,9 +314,9 @@ Tracer la courbe de la vitesse mesurée en fonction du temps.
 Est-ce que la valeur de la consigne de vitesse (Reversing velocity) est atteinte ?
 Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en régime continu ?
 
-### Temps d’intégration S-0-0101
--   Diminuer progressivement le temps d’intégration ``S-0-0101`` (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
--   Augmenter le temps d’intégration jusqu’à faire cesser l’oscillation. La valeur obtenue est le temps critique.
+### Constante de temps d’intégration Tn S-0-0101
+-   Diminuer progressivement la constante de temps d’intégration Tn ``S-0-0101`` (en partant d’environ 100 ms) jusqu’à atteindre le point d’oscillation.
+-   Augmenter la constante de temps d’intégration Tn  jusqu’à faire cesser l’oscillation. La valeur obtenue est le temps critique.
 -   Multiplier ensuite la valeur par 2 pour obtenir la valeur finale de ``S-0-0101``.
 
 #### Exemple :
@@ -490,7 +489,7 @@ Sachant que:
 
 2) Commuter le drive en mode **OM** (Operating Mode)
 
-3) Arrêter le mode "Easy startup mode"
+3) **Arrêter le mode "Easy startup mode"**
 
 
 
