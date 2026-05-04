@@ -245,7 +245,7 @@ Basierend auf der Ziegler- und Nichols-Methode
 
 > Achtung, Feed-Forward; ``P-0-1126.0.0 ``auf 0!
 
-### Verstärkung S-0-0100
+### Proportionale Verstärkung Kp (S-0-0100)
 > Abreisebedingungen:
 - Lageregler ``S-0-0104`` = 1
 $$\ S-0-0100 = 1000 * Motorträgheit = 1000 * P-0-0510 $$
@@ -254,11 +254,11 @@ $$\ S-0-0100 = 1000 * Motorträgheit = 1000 * P-0-0510 $$
 
 > Also start mit ``S-0-0100`` = **0,16**
 
-Erhöhen Sie die Verstärkung **schrittweise**, bis das System zu vibrieren beginnt (mit dem Ohr hörbar). 
+Erhöhen Sie die proportionale Verstärkung Kp **schrittweise**, bis das System zu vibrieren beginnt (mit dem Ohr hörbar). 
 
 
 
-- Verringern Sie die Verstärkung, bis die Vibration aufhört. Das ist der entscheidende Gewinn.
+- Verringern Sie die proportionale Verstärkung Kp, bis die Vibration aufhört. Das ist der entscheidende Gewinn.
 - Teilen Sie den kritischen Gewinn durch 2.
 
 #### Beispiel :
@@ -266,7 +266,7 @@ Erhöhen Sie die Verstärkung **schrittweise**, bis das System zu vibrieren begi
 - Die Schwingung erscheint bei 0,09 und verschwindet bei 0,065. Der kritische Gewinn beträgt 0,065
 - S-0-0100 geschätzt auf 0,065 / 2 = 0,0325
 
-### Integrationszeitkonstante Tn S-0-0101
+### Integrationszeitkonstante Tn (S-0-0101)
 -   Verringern Sie die Integrationszeitkonstante Tn S-0-0101 schrittweise (beginnend bei ca. 100 ms), bis Sie den Oszillationspunkt erreichen.
 -   Erhöhen Sie die Integrationszeitkonstante Tn, bis die Schwingung aufhört. Der erhaltene Wert ist die kritische Zeit.
 -   Anschließend multiplizieren Sie den Wert mit 2, um den Endwert von S-0-0101 zu erhalten.
