@@ -93,7 +93,7 @@ In unserem Fall wird die Position des Encoders unter anderem in mm für die line
 </figure>
 </div>
 
-Um die Ergebnisse leichter interpretierbar zu machen, ändern wir einen Parameter, sodass das System das Motordrehmoment in eine Kraft umwandelt, um die lineare Kraft am Ausgang der Kugelumlaufspindel abzulesen. **Vorsicht mit der Geschwindigkeit**, hier arbeiten wir in $\ [m/s]$.
+Um die Ergebnisse leichter interpretierbar zu machen, ändern wir einen Parameter, sodass das System das Motordrehmoment in eine Kraft umwandelt, um die lineare Kraft am Ausgang der Kugelumlaufspindel abzulesen. 
 
 <div style="text-align: center;">
 <figure>
@@ -215,7 +215,13 @@ Wie groß ist ungefähr die Kraft, die erforderlich ist, um die Haftreibung zu �
 
 > Der Tempomat-Integrator macht in gewisser Weise das Gleiche wie Sie. **Es erhöht die Kraft mit der Zeit**. Dies ist einer der Gründe, warum ein Integrator begrenzt ist, da er sonst den Strom am Motor auf unbestimmte Zeit erhöht. Bei einer blockierten Achse erwärmt sich der Motor schnell, dies ist oft ein Zeichen für eine mechanische Blockierung.
 
-# Bei der manuellen Abstimmung handelt es sich um einen Vergleich mit der automatischen Abstimmung.
+
+<br>
+<br>
+
+## Modus **Velocity Control**
+
+## Manuelles Stimmen und Vergleich mit der automatischen Stimmung.
 
 <div style="text-align: center;">
 <figure>
@@ -238,7 +244,7 @@ Wie groß ist ungefähr die Kraft, die erforderlich ist, um die Haftreibung zu �
 </div>
 
 ## Verfahren
-### Empirisches Setting
+### Manuelle Einstellung
 Basierend auf der Ziegler- und Nichols-Methode
 
 > Lassen Sie den Motor idealerweise im Drehzahlmodus mit etwa 20 U/min im **Easy Startup Mode** laufen. Wenn die Mechanik es nicht zulässt, arbeiten Sie im Stillstand. **Da wir ein lineares System mit endlicher Grenze haben, arbeiten wir mit einer Geschwindigkeit von Null**.
@@ -294,7 +300,10 @@ Wird der Sollwert für die Umkehrgeschwindigkeit erreicht?
 Wie groß ist die Schwankung der Geschwindigkeit in [mm/min] und in [%] im Dauerbetrieb ?
 
 
-## Visualise your data en mode **Velocity Control**,
+<br>
+
+
+## Mode **Position Control**
  
 Die folgenden Informationen 4 Sekunden lang auf dem Oszilloskop anzeigen 
 - ``S-0-0084`` Stärke
@@ -306,7 +315,10 @@ Die folgenden Informationen 4 Sekunden lang auf dem Oszilloskop anzeigen
 
 > Kommentieren Sie Ihre Ergebnisse
 
-## Vergleichen Sie mit Autotuning
+<br>
+
+## Auto tuning
+
 Merken Sie sich Ihre Werte von ``S-0-0100`` und ``S-0-0101`` und vergleichen Sie diese mit der automatischen Abstimmung.
 
 <div style="text-align: center;">

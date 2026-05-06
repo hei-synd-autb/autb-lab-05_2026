@@ -119,7 +119,7 @@ Dans notre cas de figure, la position du codeur est convertie, entre autres, en 
 </figure>
 </div>
 
-Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille. **Attention à la vitesse**, ici on travaille en $\ [m/s]$.
+Pour faciliter l'interprétation des résultats, nous modifions un paramètre afin que le système convertisse le couple du moteur en Force pour la lecture de l'effort linéaire en sortie de la vis à bille. 
 
 <div style="text-align: center;">
 <figure>
@@ -245,7 +245,12 @@ Tracer la courbe de la position, vitesse, force et erreur de poursuite en foncti
 
 > L'intégrateur du régulateur de vitesse fait d'une certaine manière la même chose que ce que vous faites. **Il augmente la force en fonction du temps**. C'est une des raisons pour lesquelles un intégrateur est limité, sinon il augmenterait indéfiniment le courant sur le moteur. Dans le cas d'un axe qui serait bloqué le moteur chauffe rapidement, c'est souvent un signe du blocage mécanique.
 
-# Faire un tuning manuel est le comparer avec l’auto-tuning.
+<br>
+<br>
+
+## Mode **Velocity Control**
+
+## Tuning manuel et comparaison avec auto-tuning.
 
 <div style="text-align: center;">
 <figure>
@@ -269,7 +274,7 @@ Tracer la courbe de la position, vitesse, force et erreur de poursuite en foncti
 </div>
 
 ## Procédure
-### Réglage empirique
+### Réglage manuel
 Basé sur la méthode Ziegler et Nichols
 
 > Idéalement, faire tourner le moteur en **mode vitesse** à environ 20 rpm à l’aide du **Easy Startup Mode**. Si la mécanique ne le permet pas, travailler à vitesse nulle. **Comme nous avons un système linéaire à limite finie, nous travaillons à vitesse nulle**.
@@ -341,9 +346,10 @@ Est-ce que la valeur de la consigne de vitesse (Reversing velocity) est atteinte
 
 Quelle est la variation des oscillations de la vitesse en [mm/min] et en [%] en régime continu ?
 
+<br>
 
 
-## Mode **Position Control**,
+## Mode **Position Control**
  
 Commuter sur le mode **Position Control** et afficher les informations suivantes sur l'oscilloscope pendant 4 secondes :
 -   ``S-0-0084``	Force
@@ -355,8 +361,14 @@ Commuter sur le mode **Position Control** et afficher les informations suivantes
  
 Commenter vos résultats.
 
-## Comparer avec l'auto tuning
+<br>
+
+## Auto tuning
+
+
 Mémorisez vos valeurs de ``S-0-0100`` et ``S-0-0101`` et les comparer avec le tuning automatique.
+
+## Procédure
 
 <div style="text-align: center;">
 <figure>
